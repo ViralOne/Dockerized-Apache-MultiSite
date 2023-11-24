@@ -1,0 +1,6 @@
+[submodule "site-1"]
+	path = site-1
+	url = https://github.com/aeimskei/basic-php-website.git
+[submodule "site-2"]
+	path = site-2
+	url = https://github.com/AmaliaMinzat/Bookstore_project_Bookly.git
