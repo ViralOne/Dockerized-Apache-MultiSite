@@ -31,19 +31,12 @@ RUN a2ensite *.conf \
     && a2dissite 000-default.conf \
     && a2dissite default-ssl.conf
 
-# Copy website files
-WORKDIR /var/www/html
-COPY --chown=www-data:www-data ./site-1 site-1/
-COPY --chown=www-data:www-data ./site-2 site-2/
-
-# Allow RW permissions to all users in the container
-RUN chmod -R 755 /var/www
-
-EXPOSE 80
-
-COPY init.sh /usr/local/bin/init.sh
-RUN chmod +x /usr/local/bin/init.sh
-ENTRYPOINT ["/usr/local/bin/init.sh"]
-
 # Use non-root user
 USER www-data
+
+# Copy submodules into /var/www/html
+WORKDIR /var/www/html
+COPY ./site-1 site-1/
+COPY ./site-2 site-2/
+
+EXPOSE 80

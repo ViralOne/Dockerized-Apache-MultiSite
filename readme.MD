@@ -46,7 +46,6 @@ This is a multi-site setup using Docker, Apache, and PHP to host multiple websit
 - `configs/` - Contains Apache site configuration files.
 - `site-1/` - Files for the first website (`a1.example.com`).
 - `site-2/` - Files for the second website (`a2.example.com`).
-- `init.sh` - Initialization script for setting up Apache and configuring virtual hosts.
 
 ## Customization
 
